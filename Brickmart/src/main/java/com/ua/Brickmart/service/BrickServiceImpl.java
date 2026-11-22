@@ -23,11 +23,6 @@ public class BrickServiceImpl implements BrickService {
     }
 
     @Override
-    public List<BrickCardDto> findAll() {
-        return repository.findAll().stream().map(mapper::toCard).toList();
-    }
-
-    @Override
     public BrickDetailDto findById(Long id) {
         Brick brick = repository.findById(id)
                 .orElseThrow(() -> new BrickNotFoundException(id));

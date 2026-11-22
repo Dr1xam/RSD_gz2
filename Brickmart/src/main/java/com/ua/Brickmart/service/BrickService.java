@@ -6,7 +6,6 @@ import com.ua.Brickmart.web.dto.BrickRequest;
 import java.util.List;
 
 public interface BrickService {
-    List<BrickCardDto> findAll();
     BrickDetailDto findById(Long id);
     List<BrickCardDto> findAll(String brickType);
     BrickDetailDto create(BrickRequest request);
