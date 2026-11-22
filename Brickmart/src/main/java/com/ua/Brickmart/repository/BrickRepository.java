@@ -8,4 +8,6 @@ public interface BrickRepository {
     List<Brick> findAll();
     Optional<Brick> findById(Long id);
     Brick save(Brick brick);
+    List<Brick> findByBrickType(String brickType);
+    boolean deleteById(Long id);
 }

@@ -31,4 +31,16 @@ public class InMemoryBrickRepository implements BrickRepository {
         storage.put(brick.getId(), brick);
         return brick;
     }
+
+    @Override
+    public List<Brick> findByBrickType(String brickType) {
+        return storage.values().stream()
+                .filter(b -> brickType.equalsIgnoreCase(b.getBrickType()))
+                .toList();
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        return storage.remove(id) != null;
+    }
 }
